@@ -2,36 +2,7 @@
 
 Manage in a better way multiple kubernetes config.
 
-This tiny cli creates in your home directory the folder `.kcm`, this folder has `kcm_config.json` that simply stores the actual name of the project, and it has also the kubernetes config you want to add.
-As an example imagine you have 2 kubernetes configurations: `client-1` and `personal`.
-
-```
-> tree -L 1 ~/.kcm
-
-/Users/USER/.kcm
-├── ...
-└── kcm_config.json
-```
-
-Then you add both files with kcm
-
-```
-> kcm add ./kube-folder-of-client-1 client-1
-> tree -L 1 ~/.kcm
-/Users/USER/.kcm
-├── client-1
-└── kcm_config.json
-
-> kcm add ./kube-folder-of-personal personal
-/Users/USER/.kcm
-├── personal
-├── client-1
-└── kcm_config.json
-```
-
-Now you already have both configuration to be managed by `kcm`. Now type `kcm use personal` or `kcm use client-1` to copy the content to your `.kube` and here we go, your kubectl now use the config you want.
-
-Then you can use `kcm use client-1` or `kcm use personal` to make your `.kube` change. Easy!
+This tiny cli creates in your home directory the folder `.kcm`, to store multiples `.kubes` configs. So you can switch configurations of kubernetes as easiest as ever. Also it stores the last config used in the file `.kcm/kcm_config.json`. 
 
 ## Install
 
@@ -69,6 +40,38 @@ $ ./bin/kcm -h
 - **now**: Show configuration that you are using, it is stored in `.kcm/kcm_config.json` file
 
 - **ls**: Show a list of the predefined configurations, basically a ls -l of the `.kcm` excluding files.
+
+## Example
+
+As an example imagine you have 2 kubernetes configurations: `client-1` and `personal`.
+
+```
+> tree -L 1 ~/.kcm
+
+/Users/USER/.kcm
+├── ...
+└── kcm_config.json
+```
+
+Then you add both files with kcm
+
+```
+> kcm add ./kube-folder-of-client-1 client-1
+> tree -L 1 ~/.kcm
+/Users/USER/.kcm
+├── client-1
+└── kcm_config.json
+
+> kcm add ./kube-folder-of-personal personal
+/Users/USER/.kcm
+├── personal
+├── client-1
+└── kcm_config.json
+```
+
+Now you already have both configuration to be managed by `kcm`. Now type `kcm use personal` or `kcm use client-1` to copy the content to your `.kube` and here we go, your kubectl now use the config you want.
+
+Then you can use `kcm use client-1` or `kcm use personal` to make your `.kube` change. Easy!
 
 ## License
 Licensed under the MIT license. 2017

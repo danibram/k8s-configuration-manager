@@ -31,6 +31,10 @@ Then you add both files with kcm
 
 Now you already have both configuration to be managed by `kcm`. Now type `kcm use personal` or `kcm use client-1` to copy the content to your `.kube` and here we go, your kubectl now use the config you want.
 
+## Install
+
+npm i -g k8s-config-management
+
 ## Commands
 
 ```

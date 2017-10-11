@@ -1,0 +1,25 @@
+{
+  "name": "k8s-config-management",
+  "version": "1.0.0",
+  "description": "Kubernetes multiple configuration manager",
+  "main": "src/index.js",
+  "author": "Daniel Biedma Ramos <info@dbr.io>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "shelljs": "^0.7.8",
+    "update-notifier": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.34",
+    "multiview": "^2.5.3",
+    "trash-cli": "^1.4.0",
+    "tslint": "^5.4.2",
+    "tslint-config-standard": "^6.0.0",
+    "typescript": "^2.3.3"
+  },
+  "scripts": {
+    "build": "trash build && tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json -w"
+  }
+}

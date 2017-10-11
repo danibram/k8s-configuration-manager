@@ -1,9 +1,12 @@
 {
   "name": "k8s-config-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kubernetes multiple configuration manager",
   "main": "src/index.js",
   "author": "Daniel Biedma Ramos <info@dbr.io>",
+  "bin": {
+    "kcm": "./bin/kcm"
+  },
   "license": "MIT",
   "dependencies": {
     "commander": "^2.11.0",

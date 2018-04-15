@@ -1,11 +1,11 @@
 class Exec {
     public executed: boolean
-    constructor () {
+    constructor() {
         this.executed = false
     }
 
-    on = (): any => this.executed = true
-    is = (): boolean => this.executed
+    public on = (): any => (this.executed = true)
+    public is = (): boolean => this.executed
 }
 
 export const exec: any = new Exec()

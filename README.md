@@ -35,17 +35,17 @@ $ ./bin/kcm -h
     ls                          Show stored config in `.kcm`
 ```
 
-* **add** `folder_path` `name`: Add `folder_path` to the `.kcm` directory with the `name`
-  you want. If you dont put name it uses `default`
+*   **add** `folder_path` `name`: Add `folder_path` to the `.kcm` directory with the `name`
+    you want. If you dont put name it uses `default`
 
-* **use** `name`: Copy the `name` config to the `.kube` directory. If you dont use a name
-  it uses `default`.
+*   **use** `name`: Copy the `name` config to the `.kube` directory. If you dont use a name
+    it uses `default`.
 
-* **now**: Show configuration that you are using, it is stored in `.kcm/kcm_config.json`
-  file
+*   **now**: Show configuration that you are using, it is stored in `.kcm/kcm_config.json`
+    file
 
-* **ls**: Show a list of the predefined configurations, basically a ls -l of the `.kcm`
-  excluding files.
+*   **ls**: Show a list of the predefined configurations, basically a ls -l of the `.kcm`
+    excluding files.
 
 ## Example
 
@@ -75,8 +75,7 @@ Then you add both files with kcm
 └── kcm_config.json
 ```
 
-Now you already have both configuration to be managed by `kcm`. Now type `kcm use
-personal` or `kcm use client-1` to copy the content to your `.kube` and here we go, your
+Now you already have both configuration to be managed by `kcm`. Now type `kcm use personal` or `kcm use client-1` to copy the content to your `.kube` and here we go, your
 kubectl now use the config you want.
 
 Then you can use `kcm use client-1` or `kcm use personal` to make your `.kube` change.

@@ -1,14 +1,10 @@
 {
-  "extends": "tslint-config-standard",
-  "rules": {
-    "ter-indent": [true, 4],
-    "no-eval": false,
-    "no-empty": false
-  },
-  "linterOptions":{
-    "exclude": [
-        "src/lib/tests",
-        "src/*.spec.ts"
-    ]
-  }
+    "extends": ["tslint:latest", "tslint-config-prettier"],
+    "rules": {
+        "ter-indent": [true, 4],
+        "no-console": false
+    },
+    "linterOptions": {
+        "exclude": ["src/lib/tests", "src/*.spec.ts"]
+    }
 }

@@ -3,7 +3,6 @@ import * as json from 'jsonfile'
 import * as path from 'path'
 import * as shell from 'shelljs'
 import * as updateNotifier from 'update-notifier'
-
 import * as PKG from '../package.json'
 import {
     BACK_PATH,
@@ -37,17 +36,22 @@ const CFG = json.readFileSync(KCM_CONFIG_PATH)
 program.version(pkg.version).description('Multiple k8s configuration manager')
 
 program
-    .command('add <folder_path> [name]')
-    .description('Add a config with a defined name')
+    .command('add <fileOrFolderPath> [name]')
+    .description(
+        `Copy contained config or file config with the specified with the folder name under 'kcm' folder`
+    )
     .alias('a')
-    .action((folderPath, name) => {
+    .action((fileOrFolderPath, name) => {
         name = name ? (Array.isArray(name) ? name.join(' ') : name) : 'default'
 
-        if (!shell.test('-d', path.resolve(folderPath))) {
-            console.log(`Cant resolve path of the folder ${folderPath}`)
+        if (shell.test('-d', path.resolve(fileOrFolderPath))) {
+            shell.cp('-R', path.resolve(fileOrFolderPath), kmcPath(name))
+            console.log(`Copied config folder to ${kmcPath(name)}`)
+        } else if (shell.test('-d', path.resolve(fileOrFolderPath))) {
+            shell.cp(path.resolve(fileOrFolderPath), kmcPath(name))
+            console.log(`Copied config file to ${kmcPath(name)}`)
         } else {
-            shell.cp('-R', path.resolve(folderPath), kmcPath(name))
-            console.log(`Copied config to ${kmcPath(name)}`)
+            console.log(`Cant resolve path of the folder ${fileOrFolderPath}`)
         }
 
         exec.on()

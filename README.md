@@ -9,7 +9,9 @@ the last config used in the file `.kcm/kcm_config.json`, and makes a backup in c
 
 ## Install
 
+```
 npm i -g k8s-config-management
+```
 
 ## Commands
 

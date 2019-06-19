@@ -20,31 +20,28 @@ $ ./bin/kcm -h
 
   Multiple k8s configuration manager
 
-
   Options:
 
-    -V, --version  output the version number
-    -h, --help     output usage information
-
+    -V, --version                    output the version number
+    -h, --help                       output usage information
 
   Commands:
 
-    add|a <folder_path> [name]  Add a config with a defined name
-    use [name]                  Put the config you want in `.kube` to use it with `kubectl`
-    now                         Shows actual config
-    ls                          Show stored config in `.kcm`
+    add|a <fileOrFolderPath> [name]  Copy contained config or file config with the specified with the folder name under 'kcm' folder
+    use [name]                       Put the config you want in `.kube` to use it with `kubectl`
+    now                              Shows actual config
+    ls                               Show stored config in `.kcm`
 ```
 
-*   **add** `folder_path` `name`: Add `folder_path` to the `.kcm` directory with the `name`
-    you want. If you dont put name it uses `default`
+-   **add** `file_or_folder_path` `name`: Add `file_or_folder_path` to the `.kcm` directory with folder `name` specified. If you dont put name it uses `default`
 
-*   **use** `name`: Copy the `name` config to the `.kube` directory. If you dont use a name
+-   **use** `name`: Copy the `name` config to the `.kube` directory. If you dont use a name
     it uses `default`.
 
-*   **now**: Show configuration that you are using, it is stored in `.kcm/kcm_config.json`
+-   **now**: Show configuration that you are using, it is stored in `.kcm/kcm_config.json`
     file
 
-*   **ls**: Show a list of the predefined configurations, basically a ls -l of the `.kcm`
+-   **ls**: Show a list of the predefined configurations, basically a ls -l of the `.kcm`
     excluding files.
 
 ## Example

@@ -1,6 +1,7 @@
-#### (1.3.2)
+#### (1.3.3)
 
 -   Added now support single config file
+-   Added npmignore
 
 #### (1.3.1)
 

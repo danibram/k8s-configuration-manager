@@ -1,0 +1,10 @@
+src/**/*.ts
+
+# codes
+src/
+
+# misc
+.gitignore
+.editorconfig
+.prettierrc
+tslint.json
